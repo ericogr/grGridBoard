@@ -19,11 +19,23 @@ module.exports = function(grunt) {
                 jshintrc: true,
                 ignores: ['src/components/**/*.js']
             }
+        },
+
+        connect: {
+            server: {
+                options: {
+                    port: 8282,
+                    hostname: '*',
+                    base: 'src',
+                    keepalive: true
+                }
+            }
         }
-    });
+     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 
     grunt.registerTask('default', ['jshint', 'uglify']);
 };

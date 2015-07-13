@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ericogr/ngGridBoard#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.10.1",
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-contrib-uglify": "^0.9.1"
   }
