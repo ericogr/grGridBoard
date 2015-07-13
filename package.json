@@ -1,0 +1,24 @@
+{
+  "name": "grGridBoard",
+  "version": "0.0.1",
+  "description": "Grid Board for Angular",
+  "main": "ng-grid-board.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericogr/ngGridBoard.git"
+  },
+  "author": "ericogr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericogr/ngGridBoard/issues"
+  },
+  "homepage": "https://github.com/ericogr/ngGridBoard#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-uglify": "^0.9.1"
+  }
+}

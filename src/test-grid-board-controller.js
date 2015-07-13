@@ -1,4 +1,4 @@
-angular.module('testGridBoard', ["ngGridBoard"])
+angular.module('testGridBoard', ["grGridBoard"])
   .controller('TestGridBoardController', function() {
 
   });
