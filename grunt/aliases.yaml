@@ -1,0 +1,7 @@
+server:
+  - 'default'
+  - 'connect:server'
+
+default:
+ - 'jshint'
+ - 'uglify'
