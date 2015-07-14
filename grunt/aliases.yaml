@@ -1,6 +1,6 @@
 server:
-  - 'default'
-  - 'connect:server'
+ - 'default'
+ - 'browserSync'
 
 default:
  - 'jshint'

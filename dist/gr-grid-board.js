@@ -1,0 +1,1 @@
+angular.module("grGridBoard",[]).directive("grGridBoard",function(){return{restrict:"E",transclude:!0,scope:{},controller:function(a,b){},templateUrl:"svg-grid-board.html",replace:!0}});

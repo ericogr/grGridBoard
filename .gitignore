@@ -1,3 +1,2 @@
-src/components
-dist
-node_modules/
+app/components
+node_modules
