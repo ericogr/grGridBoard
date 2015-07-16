@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" ng-attr-viewBox="{{viewBox}}">
-	<rect ng-repeat="pos in positions" ng-click="clickRect(pos)"
+	<rect 
+		ng-repeat="pos in positions" ng-click="clickRect(pos)"
 		ng-attr-x="{{pos.x}}" ng-attr-y="{{pos.y}}"
 		ng-attr-width="{{rectWidth}}" ng-attr-height="{{rectHeight}}"
-		ng-attr-stroke="{{lineColour}}" ng-attr-fill="{{pos.selected ? lineColour : 'white'}}" fill-opacity="1.0" stroke-opacity="1.0"/>
+		ng-attr-stroke="{{lineColour}}" ng-attr-fill="{{pos.selected ? selectedColour : unselectedColour}}" fill-opacity="1.0" stroke-opacity="1.0"/>
 </svg>
