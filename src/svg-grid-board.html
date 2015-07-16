@@ -1,3 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-	<rect ng-repeat="pos in positions" ng-attr-x="{{pos.x * 8}}" ng-attr-y="{{pos.y * 8}}" width="8" height="8" stroke="red" fill-opacity="0.0" stroke-opacity="1.0"/>
+<svg xmlns="http://www.w3.org/2000/svg" ng-attr-viewBox="{{viewBox}}">
+	<rect ng-repeat="pos in positions" ng-attr-x="{{pos.x}}" ng-attr-y="{{pos.y}}" ng-attr-width="{{rectWidth}}" ng-attr-height="{{rectHeight}}" stroke="red" fill-opacity="0.0" stroke-opacity="1.0"/>
 </svg>
