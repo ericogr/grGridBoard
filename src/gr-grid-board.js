@@ -16,10 +16,15 @@ angular.module('grGridBoard', [])
 				$scope.viewBox = "0 0 " + $scope.width + " " + $scope.height;
 				$scope.rectWidth = $scope.width / $scope.columns;
 				$scope.rectHeight = $scope.height / $scope.rows;
-				$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
 				$scope.lineColour = $scope.lineColour || 'black';
 				$scope.selectedColour = $scope.selectedColour || $scope.lineColour;
 				$scope.unselectedColour = $scope.unselectedColour || 'white';
+				$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
+
+				$scope.$watch('rows', function(rows) {
+		    		$scope.rows = rows;
+		    		$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
+		    	});
 
 				$scope.clickRect = function(posRef) {
 					posRef.selected = !posRef.selected;
@@ -38,6 +43,11 @@ angular.module('grGridBoard', [])
 				}
 			},
 			templateUrl: 'svg-grid-board.html',
-			replace: true
+			replace: true,
+			link: link
 	    };
+
+	    function link($scope, $elem, attrs) {
+
+	    }
 	});
