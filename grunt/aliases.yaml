@@ -1,7 +1,13 @@
 server:
  - 'default'
  - 'browserSync'
-
+ - 'watch-files'
+ 
 default:
  - 'jshint'
+ - 'ngtemplates'
+ - 'ngAnnotate'
  - 'uglify'
+
+watch-files:
+ - 'watch'

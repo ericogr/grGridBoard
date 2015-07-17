@@ -1,5 +1,6 @@
 angular.module('grGridBoard', [])
 	.directive('grGridBoard', function() {
+		'use strict';
 	    return {
 			restrict: 'E',
 			transclude: true,
@@ -51,12 +52,12 @@ angular.module('grGridBoard', [])
 					return ret;
 				}
 			},
-			templateUrl: 'svg-grid-board.html',
+			templateUrl: 'gr-grid-board-template',
 			replace: true,
 			link: link
 	    };
 
 	    function link($scope, $elem, attrs) {
-
+	    	console.info('y');
 	    }
 	});

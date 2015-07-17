@@ -2,11 +2,11 @@
 
 module.exports = function(grunt, options) {
     return {
-        files: {
-            cwd: 'src',
-            src: ['gr-grid-board.js'],
-            dest: 'dist',
-            expand: true
-        }
+    	grGridBoard: {
+	        files: {
+	        	'dist/gr-grid-board.min.js': ['dist/gr-grid-board.js'],
+	        	'dist/gr-grid-board-template.min.js': ['dist/gr-grid-board-template.js']
+	        }
+	    }
     };     
 };

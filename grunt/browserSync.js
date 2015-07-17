@@ -1,12 +1,13 @@
 module.exports = function(grunt) {
     return {
         bsFiles: {
-            src : ['src/**/*', 'app/*']
+            src : ['dist/**/*', 'app/*']
         },
         options: {
             startPath: "test-grid-board.html",
+            watchTask: true,
             server: {
-                baseDir: ["src", "app"],
+                baseDir: ["dist", "app"],
                 directory: true
             }
         }

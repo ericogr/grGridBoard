@@ -1,1 +1,63 @@
-angular.module("grGridBoard",[]).directive("grGridBoard",function(){function a(a,b,c){}return{restrict:"E",transclude:!0,scope:{rows:"@",columns:"@",width:"@",height:"@",lineColour:"@",selectedColour:"@",unselectedColour:"@"},controller:function(a,b){function c(a,b,c,d){for(var e=[],f=0;a>f;f++)for(var g=0;b>g;g++)e.push({line:f,column:g,x:g*c,y:f*d,selected:!1});return e}a.viewBox="0 0 "+a.width+" "+a.height,a.rectWidth=a.width/a.columns,a.rectHeight=a.height/a.rows,a.lineColour=a.lineColour||"black",a.selectedColour=a.selectedColour||a.lineColour,a.unselectedColour=a.unselectedColour||"white",a.positions=c(a.rows,a.columns,a.rectWidth,a.rectHeight),a.$watch("rows",function(b){a.rows=b,a.positions=c(a.rows,a.columns,a.rectWidth,a.rectHeight)}),a.clickRect=function(a){a.selected=!a.selected}},templateUrl:"svg-grid-board.html",replace:!0,link:a}});
+angular.module('grGridBoard', [])
+	.directive('grGridBoard', function() {
+		'use strict';
+	    return {
+			restrict: 'E',
+			transclude: true,
+			scope: {
+				rows: '@',
+				columns: '@',
+				width: '@',
+				height: '@',
+				lineColour: '@',
+				selectedColour: "@",
+				unselectedColour: "@"
+			},
+			controller: ['$scope', '$element', function($scope, $element) {
+				updatePositions();
+
+				$scope.$watch('rows', function(rows) {
+		    		$scope.rows = rows;
+		    		updatePositions();
+		    	});
+
+		    	$scope.$watch('columns', function(columns) {
+		    		$scope.columns = columns;
+		    		updatePositions();
+		    	});
+		    	
+		    	function updatePositions() {
+			    	$scope.viewBox = "0 0 " + $scope.width + " " + $scope.height;
+					$scope.rectWidth = $scope.width / $scope.columns;
+					$scope.rectHeight = $scope.height / $scope.rows;
+					$scope.lineColour = $scope.lineColour || 'black';
+					$scope.selectedColour = $scope.selectedColour || $scope.lineColour;
+					$scope.unselectedColour = $scope.unselectedColour || 'white';
+					$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
+		    	}
+
+				$scope.clickRect = function(posRef) {
+					posRef.selected = !posRef.selected;
+				};
+
+				function generatePositions(rows, columns, width, height) {
+					var ret = [];
+
+					for (var l = 0; l < rows; l++) {
+						for (var c = 0; c < columns; c++) {
+							ret.push({"line": l, "column": c, "x": c * width, "y": l * height, "selected": false});
+						}
+					}
+
+					return ret;
+				}
+			}],
+			templateUrl: 'gr-grid-board-template',
+			replace: true,
+			link: link
+	    };
+
+	    function link($scope, $elem, attrs) {
+	    	console.info('y');
+	    }
+	});
