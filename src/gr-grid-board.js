@@ -13,18 +13,27 @@ angular.module('grGridBoard', [])
 				unselectedColour: "@"
 			},
 			controller: function($scope, $element) {
-				$scope.viewBox = "0 0 " + $scope.width + " " + $scope.height;
-				$scope.rectWidth = $scope.width / $scope.columns;
-				$scope.rectHeight = $scope.height / $scope.rows;
-				$scope.lineColour = $scope.lineColour || 'black';
-				$scope.selectedColour = $scope.selectedColour || $scope.lineColour;
-				$scope.unselectedColour = $scope.unselectedColour || 'white';
-				$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
+				updatePositions();
 
 				$scope.$watch('rows', function(rows) {
 		    		$scope.rows = rows;
-		    		$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
+		    		updatePositions();
 		    	});
+
+		    	$scope.$watch('columns', function(columns) {
+		    		$scope.columns = columns;
+		    		updatePositions();
+		    	});
+		    	
+		    	function updatePositions() {
+			    	$scope.viewBox = "0 0 " + $scope.width + " " + $scope.height;
+					$scope.rectWidth = $scope.width / $scope.columns;
+					$scope.rectHeight = $scope.height / $scope.rows;
+					$scope.lineColour = $scope.lineColour || 'black';
+					$scope.selectedColour = $scope.selectedColour || $scope.lineColour;
+					$scope.unselectedColour = $scope.unselectedColour || 'white';
+					$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
+		    	}
 
 				$scope.clickRect = function(posRef) {
 					posRef.selected = !posRef.selected;
