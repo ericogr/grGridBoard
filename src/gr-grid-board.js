@@ -43,9 +43,9 @@ angular.module('grGridBoard', [])
 				function generatePositions(rows, columns, width, height) {
 					var ret = [];
 
-					for (var l = 0; l < rows; l++) {
-						for (var c = 0; c < columns; c++) {
-							ret.push({"line": l, "column": c, "x": c * width, "y": l * height, "selected": false});
+					for (var row = 0; row < rows; row++) {
+						for (var col = 0; col < columns; col++) {
+							ret.push({"line": row, "column": col, "x": col * width, "y": row * height, "selected": false});
 						}
 					}
 
@@ -53,11 +53,6 @@ angular.module('grGridBoard', [])
 				}
 			},
 			templateUrl: 'gr-grid-board-template',
-			replace: true,
-			link: link
+			replace: true
 	    };
-
-	    function link($scope, $elem, attrs) {
-	    	console.info('y');
-	    }
 	});

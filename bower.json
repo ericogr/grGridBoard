@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "description": "AngularJS grid board clickable",
   "authors": [
-    "EricoGR ericomercial@yahoo.com.br"
+    "EricoGR ericogr@gmail.com.br"
   ],
   "license": "MIT",
   "private": true,
   "main": [
-    "src/ng-grid-board.js"
+    "dist/gr-grid-board.min.js"
   ],
   "ignore": [],
   "dependencies": {
     "angular": ">=1.2.16 <=1.3.x"
   },
-  "homepage": "http://ng-grid-board..."
+  "homepage": "https://github.com/ericogr/ngGridBoard"
 }

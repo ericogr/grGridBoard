@@ -5,13 +5,12 @@ module.exports = function(grunt, options) {
         options: {
             singleQuotes: true 
         },
-        grGridBoard: {
+        sources: {
         	files: [{
 	            expand: true,
 	            cwd: 'src',
 	            src: ['gr-grid-board.js'],
-	            dest: 'dist', // Dest filepaths will have this extension. 
-	            extDot: 'last'        // Extensions in filenames begin after the last dot 
+	            dest: 'dist'
 	        }]
         }
     };     

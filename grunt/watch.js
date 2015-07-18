@@ -2,9 +2,13 @@ module.exports = function(grunt, options) {
     'use strict';
 
     return {
-        grGridBoard: {
-            files: ['src/**/*.js', 'src/**/*.html'],
-            tasks: ['jshint', 'ngtemplates', 'ngAnnotate', 'uglify']
+        sources: {
+            files: ['src/**/*.js'],
+            tasks: ['jshint', 'ngAnnotate', 'uglify']
+        },
+        templateSources: {
+            files: ['src/**/*.html'],
+            tasks: ['ngtemplates', 'uglify']
         }
     };     
 };

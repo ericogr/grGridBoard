@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
     return {
-        bsFiles: {
+        application: {
             src : ['dist/**/*', 'app/*']
         },
         options: {

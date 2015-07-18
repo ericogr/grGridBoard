@@ -1,11 +1,10 @@
 module.exports = function(grunt) {
     return {
-        dev: {
+        sources: {
             src: ['src/**/*.js']
         },
         options: {
-            jshintrc: true,
-            ignores: ['src/components/**/*.js']
+            jshintrc: true
         }
     };
 };
