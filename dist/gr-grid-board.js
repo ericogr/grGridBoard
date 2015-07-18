@@ -34,7 +34,6 @@ angular.module('grGridBoard', [])
 					$scope.selectedColour = $scope.selectedColour || $scope.lineColour;
 					$scope.unselectedColour = $scope.unselectedColour || 'white';
 					$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
-					console.info('q');
 		    	}
 
 				$scope.clickRect = function(posRef) {
