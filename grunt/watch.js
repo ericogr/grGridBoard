@@ -1,14 +1,13 @@
 module.exports = function(grunt, options) {
-    'use strict';
-
     return {
         sources: {
-            files: ['src/**/*.js'],
-            tasks: ['jshint', 'ngAnnotate', 'uglify']
-        },
+            files: 'src/**/*.js',
+            tasks: ['jshint', 'ngAnnotate', 'concat', 'uglify']
+        }
+        ,
         templateSources: {
             files: ['src/**/*.html'],
-            tasks: ['ngtemplates', 'uglify']
+            tasks: ['ngtemplates', 'concat', 'uglify']
         }
     };     
 };

@@ -1,13 +1,17 @@
-server:
- - 'default'
- - 'browserSync'
- - 'watch-files'
- 
+compile:
+ - default
+
 default:
  - 'jshint'
  - 'ngtemplates'
  - 'ngAnnotate'
+ - 'concat'
  - 'uglify'
 
-watch-files:
+dev:
+ - server
+
+server:
+ - 'default'
+ - 'browserSync'
  - 'watch'
