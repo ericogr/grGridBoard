@@ -1,6 +1,6 @@
 {
   "name": "grGridBoard",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Grid Board for Angular",
   "main": "dist/ng-grid-board",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/ericogr/ngGridBoard.git"
   },
-  "author": "ericogr",
+  "author": "EricoGR",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ericogr/ngGridBoard/issues"
