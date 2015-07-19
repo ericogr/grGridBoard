@@ -5,6 +5,7 @@ angular.module('grGridBoard', [])
 			restrict: 'E',
 			transclude: true,
 			scope: {
+				values: '=',
 				rows: '@',
 				columns: '@',
 				width: '@',
@@ -13,16 +14,14 @@ angular.module('grGridBoard', [])
 				selectedColour: "@",
 				unselectedColour: "@"
 			},
-			controller: function($scope, $element) {
+			link: function($scope, $element) {
 				updatePositions();
 
 				$scope.$watch('rows', function(rows) {
-		    		$scope.rows = rows;
 		    		updatePositions();
 		    	});
 
 		    	$scope.$watch('columns', function(columns) {
-		    		$scope.columns = columns;
 		    		updatePositions();
 		    	});
 		    	
@@ -33,11 +32,11 @@ angular.module('grGridBoard', [])
 					$scope.lineColour = $scope.lineColour || 'black';
 					$scope.selectedColour = $scope.selectedColour || $scope.lineColour;
 					$scope.unselectedColour = $scope.unselectedColour || 'white';
-					$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
+					$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight, $scope.value);
 		    	}
 
-				$scope.clickRect = function(posRef) {
-					posRef.selected = !posRef.selected;
+				$scope.clickRect = function(line, column) {
+					$scope.values[line][column] = !$scope.values[line][column];
 				};
 
 				function generatePositions(rows, columns, width, height) {
@@ -45,7 +44,7 @@ angular.module('grGridBoard', [])
 
 					for (var row = 0; row < rows; row++) {
 						for (var col = 0; col < columns; col++) {
-							ret.push({"line": row, "column": col, "x": col * width, "y": row * height, "selected": false});
+							ret.push({"line": row, "column": col, "x": col * width, "y": row * height});
 						}
 					}
 

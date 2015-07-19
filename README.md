@@ -9,4 +9,4 @@ Install `grunt-cli` and `bower`:
 npm install -g grunt-cli bower
 ```
 
-Run `grunt` for building and `grunt server` for preview
+Run `grunt` for building and `grunt serve` for preview

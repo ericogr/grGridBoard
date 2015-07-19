@@ -20,7 +20,9 @@
       <input type="text" ng-model="boardCols" ng-init="boardCols=8" placeholder="cols">
       <hr>
       <h3>Size: {{boardRows}}x{{boardCols}}</h3>
+      <h3>Data: {{boardValue}}</h3>
     </div>
-    <gr-grid-board rows="{{boardRows}}" columns="{{boardCols}}" width="512" height="512" line-colour="black" selected-colour="black" unselected-colour="white"></gr-grid-board>
+    <gr-grid-board values="boardValue" rows="{{boardRows}}" columns="{{boardCols}}" width="512" height="512" line-colour="black" selected-colour="black" unselected-colour="white">
+    </gr-grid-board>
 </body>
 </html>
