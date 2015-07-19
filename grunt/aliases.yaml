@@ -1,7 +1,7 @@
-compile:
- - default
-
 default:
+ - compile
+
+compile:
  - 'jshint'
  - 'ngtemplates'
  - 'ngAnnotate'
@@ -9,9 +9,9 @@ default:
  - 'uglify'
 
 dev:
- - server
-
-server:
  - 'default'
  - 'browserSync'
  - 'watch'
+
+server:
+ - server
