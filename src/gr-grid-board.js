@@ -18,11 +18,11 @@ angular.module('grGridBoard', [])
 				initialize();
 
 				$scope.$watch('rows', function(rows) {
-		    		updatePositions();
+		    		initialize();
 		    	});
 
 		    	$scope.$watch('columns', function(columns) {
-		    		updatePositions();
+		    		initialize();
 		    	});
 
 				function initialize() {
@@ -35,7 +35,7 @@ angular.module('grGridBoard', [])
 				}
 
 		    	function validateValues(values, rows) {
-		    		return (values instanceof Array && values.length === rows);
+		    		return (values instanceof Array && values.length >= rows);
 		    	}
 
 		    	function createValues(rows, columns) {
