@@ -1,7 +1,7 @@
 {
   "name": "grGridBoard",
-  "version": "0.1.0",
-  "description": "Grid Board for Angular",
+  "version": "0.1.1",
+  "description": "AngularJS clickable grid board",
   "main": "dist/ng-grid-board",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0"

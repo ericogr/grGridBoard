@@ -1,9 +1,9 @@
 {
   "name": "ng-grid-board",
-  "version": "0.1.0",
-  "description": "AngularJS grid board clickable",
+  "version": "0.1.1",
+  "description": "AngularJS clickable grid board",
   "authors": [
-    "EricoGR ericogr@gmail.com.br"
+    "EricoGR ericogr@gmail.com"
   ],
   "license": "MIT",
   "private": true,
