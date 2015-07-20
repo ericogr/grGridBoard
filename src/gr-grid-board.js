@@ -15,7 +15,7 @@ angular.module('grGridBoard', [])
 				unselectedColour: "@"
 			},
 			link: function($scope, $element) {
-				updatePositions();
+				initialize();
 
 				$scope.$watch('rows', function(rows) {
 		    		updatePositions();
@@ -24,6 +24,25 @@ angular.module('grGridBoard', [])
 		    	$scope.$watch('columns', function(columns) {
 		    		updatePositions();
 		    	});
+
+				function initialize() {
+					if (!validateValues($scope.values, parseInt($scope.rows))) {
+						console.debug('Invalid value [' + $scope.values + "]: creating a new array[[]]");
+						$scope.values = createValues(parseInt($scope.rows), parseInt($scope.columns));
+					}
+
+					updatePositions();
+				}
+
+		    	function validateValues(values, rows) {
+		    		return (values instanceof Array && values.length === rows);
+		    	}
+
+		    	function createValues(rows, columns) {
+					return Array.apply(null, new Array(parseInt($scope.rows))).map(function() {
+						return Array.apply(null, new Array(parseInt($scope.columns))).map(Boolean.prototype.valueOf, false);
+					});
+		    	}
 		    	
 		    	function updatePositions() {
 			    	$scope.viewBox = "0 0 " + $scope.width + " " + $scope.height;
@@ -32,7 +51,7 @@ angular.module('grGridBoard', [])
 					$scope.lineColour = $scope.lineColour || 'black';
 					$scope.selectedColour = $scope.selectedColour || $scope.lineColour;
 					$scope.unselectedColour = $scope.unselectedColour || 'white';
-					$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight, $scope.value);
+					$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
 		    	}
 
 				$scope.clickRect = function(line, column) {

@@ -9,7 +9,7 @@ compile:
  - 'uglify'
 
 dev:
- - 'default'
+ - 'compile'
  - 'browserSync'
  - 'watch'
 
