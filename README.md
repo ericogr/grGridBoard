@@ -1,4 +1,4 @@
-# AngularJS SVG Grid Board Directive [![Build Status](https://travis-ci.org/ericogr/ngGridBoard.svg?branch=master)](http://travis-ci.org/ericogr/ngGridBoard)
+# AngularJS SVG Grid Board Directive [![Build Status](https://travis-ci.org/ericogr/grGridBoard.svg?branch=master)](http://travis-ci.org/ericogr/grGridBoard)
 
 With this directive, you can create a dynamic grid board. When you click on any square, it makes visible or invisible.
 
@@ -13,4 +13,4 @@ Run `grunt` for building and `grunt serve` for preview
 
 Example output:
 
-![alt tag](https://raw.githubusercontent.com/ericogr/ngGridBoard/master/docs/grid-01.png "grid board 8x8 example")
+![alt tag](https://raw.githubusercontent.com/ericogr/grGridBoard/master/docs/grid-01.png "grid board 8x8 example")

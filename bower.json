@@ -1,5 +1,5 @@
 {
-  "name": "ng-grid-board",
+  "name": "gr-grid-board",
   "version": "0.1.1",
   "description": "AngularJS clickable grid board",
   "authors": [
@@ -28,5 +28,5 @@
   "dependencies": {
     "angular": ">=1.2.16 <=1.3.x"
   },
-  "homepage": "https://github.com/ericogr/ngGridBoard"
+  "homepage": "https://github.com/ericogr/grGridBoard"
 }

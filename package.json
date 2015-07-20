@@ -2,20 +2,20 @@
   "name": "grGridBoard",
   "version": "0.1.1",
   "description": "AngularJS clickable grid board",
-  "main": "dist/ng-grid-board",
+  "main": "dist/gr-grid-board",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ericogr/ngGridBoard.git"
+    "url": "git+https://github.com/ericogr/grGridBoard.git"
   },
   "author": "EricoGR",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ericogr/ngGridBoard/issues"
+    "url": "https://github.com/ericogr/grGridBoard/issues"
   },
-  "homepage": "https://github.com/ericogr/ngGridBoard#readme",
+  "homepage": "https://github.com/ericogr/grGridBoard#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
