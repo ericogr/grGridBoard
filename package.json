@@ -1,6 +1,6 @@
 {
   "name": "grGridBoard",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "AngularJS clickable grid board",
   "main": "dist/gr-grid-board",
   "scripts": {
