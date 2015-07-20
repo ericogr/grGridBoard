@@ -5,7 +5,7 @@ angular.module('grGridBoard', [])
 			restrict: 'E',
 			transclude: true,
 			scope: {
-				values: '=',
+				values: '=?',
 				rows: '@',
 				columns: '@',
 				width: '@',
