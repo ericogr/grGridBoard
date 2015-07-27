@@ -3,14 +3,36 @@
 With this directive, you can create a dynamic grid board. When you click on any square, it makes visible or invisible.
 
 ## Usage
+1. `bower install gr-grid-board`
+2. Add `grGridBoard` as a module dependency to your app.
+3. Insert the `gr-grid-board` directive into your template:
 
-Install `grunt-cli` and `bower`:
+```html
+<gr-grid-board
+  values="boardValue" rows="{{boardRows}}" columns="{{boardCols}}"
+  width="512" height="512"
+  line-colour="black" selected-colour="black" unselected-colour="white">
+</gr-grid-board>
 ```
-npm install -g grunt-cli bower
+
+## Controller Example
+
+```javascript
+angular.module('testGridBoard', ["grGridBoard"])
+	.controller('TestGridBoardController', function($scope) {
+		$scope.boardValue = [
+			[true, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, true]
+		];
+	});
 ```
 
-Run `grunt` for building and `grunt serve` for preview
-
-Example output:
+output:
 
 ![alt tag](https://raw.githubusercontent.com/ericogr/grGridBoard/master/docs/grid-01.png "grid board 8x8 example")
