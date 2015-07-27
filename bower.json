@@ -1,6 +1,6 @@
 {
   "name": "gr-grid-board",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/ericogr/grGridBoard",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   "description": "AngularJS clickable grid board",
   "license": "MIT",
   "main": [
-    "src/gr-grid-board.js"
+    "dist/gr-grid-board-all.js"
   ],
   "ignore": [
     "app",
