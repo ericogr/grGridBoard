@@ -21,15 +21,15 @@ With this directive, you can create a dynamic grid board. When you click on any 
 angular.module('testGridBoard', ["grGridBoard"])
 	.controller('TestGridBoardController', function($scope) {
 		$scope.boardValue = [
-			[true, false, false, false, false, false, false, false],
-			[false, false, false, false, false, false, false, false],
-			[false, false, false, false, false, false, false, false],
-			[false, false, false, false, false, false, false, false],
-			[false, false, false, false, false, false, false, false],
-			[false, false, false, false, false, false, false, false],
-			[false, false, false, false, false, false, false, false],
-			[false, false, false, false, false, false, false, true]
-		];
+				[true,false,true,false,true,false,true,false],
+				[false,true,false,true,false,true,false,true],
+				[true,false,false,false,false,false,true,false],
+				[false,true,false,true,true,false,false,true],
+				[true,false,false,true,true,false,true,false],
+				[false,true,false,false,false,false,false,true],
+				[true,false,true,false,true,false,true,false],
+				[false,true,false,true,false,true,false,true]
+				];
 	});
 ```
 
