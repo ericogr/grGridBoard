@@ -6,6 +6,7 @@ angular.module('grGridBoard', [])
 			transclude: true,
 			scope: {
 				values: '=?',
+				countSelected: '=?',
 				rows: '@',
 				columns: '@',
 				width: '@',
@@ -32,6 +33,7 @@ angular.module('grGridBoard', [])
 					}
 
 					updatePositions();
+					updateCount();
 				}
 
 		    	function validateValues(values, rows) {
@@ -54,8 +56,21 @@ angular.module('grGridBoard', [])
 					$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
 		    	}
 
+		    	function updateCount() {
+		    		var count = 0;
+
+		    		for (var row = 0; row < parseInt($scope.rows); row++) {
+		    			for (var col = 0; col < parseInt($scope.columns); col++) {
+		    				count += $scope.values[row][col] ? 1 : 0;
+		    			}
+		    		}
+
+		    		$scope.countSelected = count;
+		    	}
+
 				$scope.clickRect = function(line, column) {
 					$scope.values[line][column] = !$scope.values[line][column];
+					updateCount();
 				};
 
 				function generatePositions(rows, columns, width, height) {
