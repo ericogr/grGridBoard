@@ -6,14 +6,15 @@ angular.module('grGridBoard', [])
 			transclude: true,
 			scope: {
 				values: '=?',
+				onClick: '&',
 				countSelected: '=?',
 				rows: '@',
 				columns: '@',
 				width: '@',
 				height: '@',
 				lineColour: '@',
-				selectedColour: "@",
-				unselectedColour: "@"
+				selectedColour: '@',
+				unselectedColour: '@'
 			},
 			link: function($scope, $element) {
 				initialize();
@@ -27,8 +28,8 @@ angular.module('grGridBoard', [])
 		    	});
 
 				function initialize() {
+					//Invalid value: creating a new array
 					if (!validateValues($scope.values, parseInt($scope.rows))) {
-						console.debug('Invalid value [' + $scope.values + "]: creating a new array[[]]");
 						$scope.values = createValues(parseInt($scope.rows), parseInt($scope.columns));
 					}
 
@@ -70,7 +71,10 @@ angular.module('grGridBoard', [])
 
 				$scope.clickRect = function(line, column) {
 					$scope.values[line][column] = !$scope.values[line][column];
+					
 					updateCount();
+
+					$scope.onClick({'line': line, 'column': column, 'value': $scope.values[line][column]});
 				};
 
 				function generatePositions(rows, columns, width, height) {
