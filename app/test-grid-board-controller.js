@@ -13,7 +13,7 @@ angular.module('testGridBoard', ["grGridBoard"])
 
 		$scope.clickEvent = '';
 
-		$scope.clicado = function(line, column, values, selected) {
-			$scope.clickEvent = line + '/' + column + '/' + selected;
+		$scope.clicado = function(line, column, values, countSelected, selected) {
+			$scope.clickEvent = line + '/' + column + '/' + countSelected + '/' + selected;
 		}
 	});

@@ -74,7 +74,7 @@ angular.module('grGridBoard', [])
 					
 					updateCount();
 
-					$scope.onClick({'line': line, 'column': column, 'values': $scope.values,'selected': $scope.values[line][column]});
+					$scope.onClick({'line': line, 'column': column, 'values': $scope.values, 'countSelected': $scope.countSelected, 'selected': $scope.values[line][column]});
 				};
 
 				function generatePositions(rows, columns, width, height) {
