@@ -2,9 +2,8 @@
 	<rect 
 		ng-repeat="pos in positions"
 		class="gr-grid-rect gr-grid-rect-{{pos.line}}x{{pos.column}}"
+		ng-class="{selected: values[pos.line][pos.column], unselected: !values[pos.line][pos.column]}"
 		ng-click="clickRect(pos.line, pos.column)"
-		ng-attr-x="{{pos.x}}" ng-attr-y="{{pos.y}}"
-		ng-attr-width="{{rectWidth}}" ng-attr-height="{{rectHeight}}"
-		ng-attr-stroke="{{lineColour}}" ng-attr-fill="{{values[pos.line][pos.column] ? selectedColour : unselectedColour}}" fill-opacity="1.0" stroke-opacity="1.0">
+		ng-attr-x="{{pos.x}}" ng-attr-y="{{pos.y}}">
 	</rect>
 </svg>

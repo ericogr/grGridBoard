@@ -4,6 +4,8 @@ angular.module('grGridBoard', [])
 	    return {
 			restrict: 'E',
 			transclude: true,
+			templateUrl: 'gr-grid-board-template',
+			replace: true,
 			scope: {
 				values: '=?',
 				onClick: '&',
@@ -11,10 +13,7 @@ angular.module('grGridBoard', [])
 				rows: '@',
 				columns: '@',
 				width: '@',
-				height: '@',
-				lineColour: '@',
-				selectedColour: '@',
-				unselectedColour: '@'
+				height: '@'
 			},
 			link: function($scope, $element) {
 				initialize();
@@ -51,9 +50,6 @@ angular.module('grGridBoard', [])
 			    	$scope.viewBox = "0 0 " + $scope.width + " " + $scope.height;
 					$scope.rectWidth = $scope.width / $scope.columns;
 					$scope.rectHeight = $scope.height / $scope.rows;
-					$scope.lineColour = $scope.lineColour || 'black';
-					$scope.selectedColour = $scope.selectedColour || $scope.lineColour;
-					$scope.unselectedColour = $scope.unselectedColour || 'white';
 					$scope.positions = generatePositions($scope.rows, $scope.columns, $scope.rectWidth, $scope.rectHeight);
 		    	}
 
@@ -74,7 +70,7 @@ angular.module('grGridBoard', [])
 					
 					updateCount();
 
-					$scope.onClick({'line': line, 'column': column, 'values': $scope.values, 'countSelected': $scope.countSelected, 'selected': $scope.values[line][column]});
+					$scope.onClick({'line': line, 'column': column, 'value': $scope.values[line][column], 'countSelected': $scope.countSelected, 'values': $scope.values});
 				};
 
 				function generatePositions(rows, columns, width, height) {
@@ -88,8 +84,6 @@ angular.module('grGridBoard', [])
 
 					return ret;
 				}
-			},
-			templateUrl: 'gr-grid-board-template',
-			replace: true
+			}
 	    };
 	});

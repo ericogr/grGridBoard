@@ -9,6 +9,22 @@
 		svg {
 		  margin: 40px;
 		}
+
+    .gr-grid-rect {
+      stroke: black;
+      width: 64px;
+      height: 64px;
+      rx: 8;
+      ry: 8;
+    }
+
+    .gr-grid-rect.selected {
+      fill: black;
+    }
+
+    .gr-grid-rect.unselected {
+      fill: white;
+    }
 	</style>
 </head>
 <body ng-controller="TestGridBoardController">
@@ -27,10 +43,12 @@
     <gr-grid-board
       id="board1"
       values="boardValue"
-      on-click="clicado(line, column, values, countSelected, selected)" count-selected="count" 
-      rows="{{boardRows}}" columns="{{boardCols}}"
-      width="512" height="512"
-      line-colour="black" selected-colour="black" unselected-colour="white">
+      on-click="clicado(line, column, value, countSelected, values)"
+      count-selected="count" 
+      rows="{{boardRows}}"
+      columns="{{boardCols}}"
+      width="512"
+      height="512">
     </gr-grid-board>
 </body>
 </html>

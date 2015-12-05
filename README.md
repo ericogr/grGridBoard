@@ -8,11 +8,34 @@ With this directive, you can create a dynamic grid board. When you click on any 
 3. Insert the `gr-grid-board` directive into your template:
 
 ```html
-<gr-grid-board
-  values="boardValue" rows="{{boardRows}}" columns="{{boardCols}}"
-  width="512" height="512"
-  line-colour="black" selected-colour="black" unselected-colour="white">
-</gr-grid-board>
+    <gr-grid-board
+      id="board1"
+      values="boardValue"
+      on-click="clicado(line, column, value, countSelected, values)"
+      count-selected="count" 
+      rows="{{boardRows}}"
+      columns="{{boardCols}}"
+      width="512"
+      height="512">
+    </gr-grid-board>
+```
+
+```css
+    .gr-grid-rect {
+      stroke: black;
+      width: 64px;
+      height: 64px;
+      rx: 8;
+      ry: 8;
+    }
+
+    .gr-grid-rect.selected {
+      fill: black;
+    }
+
+    .gr-grid-rect.unselected {
+      fill: white;
+    }
 ```
 
 ## Controller Example
@@ -21,15 +44,21 @@ With this directive, you can create a dynamic grid board. When you click on any 
 angular.module('testGridBoard', ["grGridBoard"])
 	.controller('TestGridBoardController', function($scope) {
 		$scope.boardValue = [
-				[true,false,true,false,true,false,true,false],
-				[false,true,false,true,false,true,false,true],
-				[true,false,false,false,false,false,true,false],
-				[false,true,false,true,true,false,false,true],
-				[true,false,false,true,true,false,true,false],
-				[false,true,false,false,false,false,false,true],
-				[true,false,true,false,true,false,true,false],
-				[false,true,false,true,false,true,false,true]
-				];
+			[true, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, false],
+			[false, false, false, false, false, false, false, true]
+		];
+
+		$scope.clickEvent = '';
+
+		$scope.clicado = function(line, column, value, countSelected, values) {
+			$scope.clickEvent = line + '/' + column + '/' + value + '/' + countSelected;
+		}
 	});
 ```
 
